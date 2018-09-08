@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Libros">
+    tools:context=".Libro">
 
     <LinearLayout
         android:layout_width="368dp"
@@ -15,40 +15,31 @@
         tools:ignore="MissingConstraints">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/busqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/busqueda" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/botonBusqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/busqueda" />
+        <TextView
+            android:id="@+id/ingreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo" />
 
-        <EditText
-            android:id="@+id/editText2"
+        <ProgressBar
+            android:id="@+id/BarraDeProgresoLibros"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:layout_height="wrap_content" />
 
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

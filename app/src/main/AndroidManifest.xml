@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Perfil" />
-        <activity android:name=".Libros"></activity>
+        <activity android:name=".Libro"></activity>
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // first parameter is the context, second is the class of the activity to launch
-                Intent i = new Intent(getApplicationContext(), Libros.class);
+                Intent i = new Intent(getApplicationContext(), Libro.class);
                 startActivity(i); // brings up the second activity
             }
         });

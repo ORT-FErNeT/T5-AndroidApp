@@ -3,5 +3,9 @@
     <string name="presiona">Presiona</string>
     <string name="busqueda">buscar</string>
     <string name="titulo">titulo</string>
+    <string name="mi_perfil">mi perfil</string>
+    <string name="mis_libros">mis libros</string>
+    <string name="prestados">prestados</string>
+    <string name="libros_deseados">libros deseados</string>
     <string name="autor">autor</string>
-    </resources>
+</resources>

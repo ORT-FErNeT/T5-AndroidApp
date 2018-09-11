@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Perfil" />
-        <activity android:name=".Libro"></activity>
+        <activity android:name=".ApiConnect" />
+        <activity android:name=".Menu" />
+        <activity android:name=".MisLibros" />
+        <activity android:name=".LibrosPrestados" />
+        <activity android:name=".LibrosDeseados"></activity>
     </application>
 
 </manifest>

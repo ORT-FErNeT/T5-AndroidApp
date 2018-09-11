@@ -21,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class Libro extends Activity {
+public class ApiConnect extends Activity {
 
 
     private RequestQueue  mRequestQueue;

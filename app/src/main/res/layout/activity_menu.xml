@@ -21,46 +21,55 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imagen_perfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/foto_menu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="25dp"
                 android:scaleType="center"
                 android:src="@drawable/imagen" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/texto_perfil_menu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="25dp"
                 android:layout_weight="1"
+                android:gravity="center_vertical|center"
                 android:text="mis_datos" />
 
         </LinearLayout>
-
-
 
 
         <Button
             android:id="@+id/boton_mi_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:text="@string/mi_perfil" />
 
         <Button
             android:id="@+id/boton_mis_libros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:text="@string/mis_libros" />
 
         <Button
             android:id="@+id/boton_prestados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:text="@string/prestados" />
 
         <Button
             android:id="@+id/boton_libros_deseados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:text="@string/libros_deseados" />
     </LinearLayout>
 

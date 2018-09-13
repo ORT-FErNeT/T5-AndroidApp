@@ -16,23 +16,40 @@
 
 
         <EditText
-            android:id="@+id/busqueda"
+            android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/busqueda" />
+            android:hint="@string/titulo"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/autor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:ems="10"
+            android:hint="@string/autor"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/botonBusqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:text="@string/busqueda" />
+
         <TextView
             android:id="@+id/ingreso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/titulo" />
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/busqueda" />
 
         <ProgressBar
             android:id="@+id/BarraDeProgresoLibros"

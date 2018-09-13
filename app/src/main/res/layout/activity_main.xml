@@ -17,9 +17,15 @@
 
 
         <Button
-            android:id="@+id/boton1"
+            android:id="@+id/boton_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/presiona" />
+            android:text="@string/menu" />
+
+        <Button
+            android:id="@+id/boton_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/busqueda" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,7 @@
     <ListView
         android:id="@+id/mi_lista_de_libros"
         android:divider="#f00"
-        android:dividerHeight="1dp"
+        android:dividerHeight="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

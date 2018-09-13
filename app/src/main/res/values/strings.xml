@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Sharebook</string>
     <string name="presiona">Presiona</string>
+    <string name="menu">Menu</string>
     <string name="busqueda">buscar</string>
     <string name="titulo">titulo</string>
     <string name="mi_perfil">mi perfil</string>

@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:text="@string/mi_perfil" />
+            android:text="@string/mi_perfil"/>
 
         <Button
             android:id="@+id/boton_mis_libros"

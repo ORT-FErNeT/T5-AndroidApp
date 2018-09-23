@@ -21,6 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:layout_marginTop="20dp"
                 android:id="@+id/foto_menu"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -30,6 +31,7 @@
 
             <TextView
                 android:id="@+id/texto_perfil_menu"
+                android:layout_marginTop="20dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="25dp"

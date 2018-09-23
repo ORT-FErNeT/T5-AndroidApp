@@ -9,4 +9,5 @@
     <string name="prestados">prestados</string>
     <string name="libros_deseados">libros deseados</string>
     <string name="autor">autor</string>
+    <string name="editar_perfil">Editar perfil</string>
 </resources>

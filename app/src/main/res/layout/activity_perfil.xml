@@ -20,6 +20,8 @@
         tools:layout_editor_absoluteY="46dp">
 
         <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/imagen_perfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -29,6 +31,8 @@
             android:src="@drawable/imagen" />
 
         <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/datos_perfil"
             android:layout_marginEnd="25dp"
             android:layout_width="200dp"
@@ -38,21 +42,28 @@
             android:text="mis_datos" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/boton_editar_perfil"
+        android:layout_marginStart="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editar_perfil"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <EditText
-                android:id="@+id/iem1"
+                android:id="@+id/item1"
+                android:layout_marginStart="25dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="item1" />
+
 
             <EditText
                 android:id="@+id/item2"

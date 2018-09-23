@@ -25,7 +25,8 @@
         <activity android:name=".Menu" />
         <activity android:name=".MisLibros" />
         <activity android:name=".LibrosPrestados" />
-        <activity android:name=".LibrosDeseados"></activity>
+        <activity android:name=".LibrosDeseados" />
+        <activity android:name=".EditarPerfil"></activity>
     </application>
 
 </manifest>

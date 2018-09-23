@@ -9,5 +9,10 @@
     <string name="prestados">prestados</string>
     <string name="libros_deseados">libros deseados</string>
     <string name="autor">autor</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="edad">Edad</string>
+    <string name="ubicacion">Ubicacion</string>
+    <string name="preferencias">Preferencias</string>
     <string name="editar_perfil">Editar perfil</string>
 </resources>

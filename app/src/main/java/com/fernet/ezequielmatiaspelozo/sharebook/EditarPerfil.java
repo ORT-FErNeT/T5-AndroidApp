@@ -62,11 +62,10 @@ public class EditarPerfil extends Activity {
         });
 
 
-        //muestro los datos actualizados
+        //muestro los datos actualizados para probar
         actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 String palabra = dbmn.returnData();
                 prueba.setText(palabra);

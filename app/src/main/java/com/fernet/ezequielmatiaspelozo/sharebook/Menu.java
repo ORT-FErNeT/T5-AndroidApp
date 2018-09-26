@@ -61,5 +61,23 @@ public class Menu extends Activity {
                 startActivity(i); // brings up the second activity
             }
         });
+        //voy a libros prestados
+        prestados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // first parameter is the context, second is the class of the activity to launch
+                Intent  i = new Intent(getApplicationContext(), LibrosPrestados.class);
+                startActivity(i); // brings up the second activity
+            }
+        });
+        //voy a mi libros deseados
+        librosDeseados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // first parameter is the context, second is the class of the activity to launch
+                Intent  i = new Intent(getApplicationContext(), LibrosDeseados.class);
+                startActivity(i); // brings up the second activity
+            }
+        });
     }
 }

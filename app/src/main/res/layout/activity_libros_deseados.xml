@@ -7,6 +7,7 @@
     tools:context=".LibrosDeseados">
 
     <ListView
+        android:id="@+id/libros_deseados_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

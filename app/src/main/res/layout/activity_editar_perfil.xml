@@ -18,7 +18,7 @@
                 android:id="@+id/nombre_de_perfil"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/nombre" />
 
@@ -26,7 +26,7 @@
                 android:id="@+id/nombre_edit"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -41,7 +41,7 @@
                 android:id="@+id/apellido_de_perfil"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/apellido"/>
 "
@@ -49,7 +49,7 @@
                 android:id="@+id/apellido_edit"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -64,13 +64,13 @@
                 android:id="@+id/edad_de_perfil"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/edad" />
 
             <EditText
                 android:id="@+id/edad_edit"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="20dp"
@@ -88,7 +88,7 @@
                 android:id="@+id/ubicacion_de_perfil"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/ubicacion" />
 
@@ -96,7 +96,7 @@
                 android:id="@+id/ubicacion_edit"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -112,7 +112,7 @@
                 android:id="@+id/preferencia_de_perfil"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/preferencias" />
 
@@ -120,7 +120,7 @@
                 android:id="@+id/preferencia_edit"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="50dp"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"

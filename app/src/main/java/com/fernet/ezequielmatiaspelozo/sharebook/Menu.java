@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.StringRequest;
+
 public class Menu extends Activity {
 
     private Button miPerfil;
@@ -19,10 +21,8 @@ public class Menu extends Activity {
     private Button librosDeseados;
     private ImageView perfil;
     private TextView textoPerfil;
-    // para refactor
-    private SQLiteDatabase db;
-    private BaseDeDatos b;
-    private ContentValues nuevoRegistro;
+    private DataBaseManager dbmn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,52 +35,15 @@ public class Menu extends Activity {
         textoPerfil = (TextView) findViewById(R.id.texto_perfil_menu);
         librosDeseados = (Button) findViewById(R.id.boton_libros_deseados);
 
+        dbmn = new DataBaseManager(this);
+
         perfil = (ImageView) findViewById(R.id.foto_menu);
         perfil.setImageResource(R.drawable.avatar);
-        /*
-        ///////se debe refactorizar todo esto para no repetir codigo/////////////////////////////////////////////////////////
-        creamos la base de datos
-                */
-        b = new BaseDeDatos(this, "Ejemplo", null, 2);
-        // la abrimos en modo escritura
-        db = b.getWritableDatabase();
 
-
-
-        //continuar aca para leer la base y lo concateno en un String para probar
-        db = b.getReadableDatabase();
-        String palabra = "";
-        //utilizo un cursor para recorrer mi base de datos
-        Cursor cursor = db.rawQuery("SELECT * FROM Ejemplo",null);
-        try {
-            if (cursor.moveToFirst()) {
-                do {
-                    //estoy probando que se graban los ingrsos en la base
-                    palabra += cursor.getString(cursor.getColumnIndex("nombre"));
-                    palabra += "\n";
-                    palabra += cursor.getString(cursor.getColumnIndex("apellido"));
-                    palabra += "\n";
-                    palabra += cursor.getString(cursor.getColumnIndex("edad"));
-                    palabra += "\n";
-                    palabra += cursor.getString(cursor.getColumnIndex("ubicacion"));
-                    palabra += "\n";
-                    palabra += cursor.getString(cursor.getColumnIndex("preferencias"));
-
-                } while(cursor.moveToNext());
-            }
-        } catch (Exception e) {
-
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-        // mostramos en el TextView de prueba
-
+        //cargo los datos de la BD en mi perfil del menu
+        String palabra = dbmn.returnData();
         textoPerfil.setText(palabra);
-
-    ///fin zona de refactor///////////////////////////////////////////////////////////
-
+        //voy a mis libros
         misLibros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +52,7 @@ public class Menu extends Activity {
                 startActivity(i); // brings up the second activity
             }
         });
-
+        //voy a mi perfil
         miPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

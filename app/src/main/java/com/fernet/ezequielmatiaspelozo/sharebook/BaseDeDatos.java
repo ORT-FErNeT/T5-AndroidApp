@@ -1,6 +1,7 @@
 package com.fernet.ezequielmatiaspelozo.sharebook;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -25,4 +26,6 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Ejemplo");
         db.execSQL(sqlCreate);
     }
+
+
 }

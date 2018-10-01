@@ -52,7 +52,7 @@ public class ApiConnect extends Activity {
         private void searchBooks(String isbn) {
         String url = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
         url += isbn;
-        ArrayList<Libro> libros new ArrayList<Libro>();
+        ArrayList<Libro> libros = new ArrayList<Libro>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

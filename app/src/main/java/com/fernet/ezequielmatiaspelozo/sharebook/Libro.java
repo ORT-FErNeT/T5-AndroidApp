@@ -6,13 +6,21 @@ import android.widget.Button;
 
 public class Libro {
 
-    public  String nombre;
-    public int imagen;
+    public  String titulo;
+    public String imagen;
 
-    public Libro(String nombre, int imagen) {
-        this.nombre = nombre;
+    public String getTitulo(){
+        return this.titulo;
+    }
+    public String getImagen(){
+        return this.imagen;
+    }
+    public void setTitulo(String titulo){
+        this.titulo = titulo;
+    }
+
+    public void setImagen(String imagen){
         this.imagen = imagen;
-
     }
 
 }

@@ -2,6 +2,7 @@ package com.fernet.ezequielmatiaspelozo.sharebook;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 
 public class ApiConnect extends Activity {
 
@@ -26,7 +29,6 @@ public class ApiConnect extends Activity {
     private EditText titulo;
     private Button botonBusqueda;
     private TextView ingreso;
-
 
 
     @Override
@@ -41,32 +43,25 @@ public class ApiConnect extends Activity {
        botonBusqueda.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               parseJson();
+               searchBooks("1562518054");
            }
        });
 
         }
 
-        private void parseJson() {
-        String url = "https://api.myjson.com/bins/hq93w";
-
+        private void searchBooks(String isbn) {
+        String url = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+        url += isbn;
+        ArrayList<Libro> libros new ArrayList<Libro>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
                             ingreso.setText(" ");
-                            JSONArray jsonArray = response.getJSONArray("employees");
-                            JSONObject employee;
-                            String firstName;
-                            String email;
-                            int age;
-                            for (int i = 0; i < jsonArray.length(); i++){
-                                employee = jsonArray.getJSONObject(i);
-                                firstName = employee.getString("firstname");
-                                email = employee.getString("mail");
-                                age = employee.getInt("age");
-                                ingreso.append(firstName + ", " + String.valueOf(age) + " , " + email + "\n\n" );
+                            JSONArray booksArray = response.getJSONArray("items");
+                            Libro libro;
+                            for (int i = 0; i < booksArray.length(); i ++){
 
                             }
                         } catch (JSONException e) {

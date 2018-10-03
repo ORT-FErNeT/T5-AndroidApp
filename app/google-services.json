@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "179072356202",
+    "firebase_url": "https://sharebook-90185.firebaseio.com",
+    "project_id": "sharebook-90185",
+    "storage_bucket": "sharebook-90185.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179072356202:android:a7846622e53299ce",
+        "android_client_info": {
+          "package_name": "com.fernet.ezequielmatiaspelozo.sharebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179072356202-lrtpdf1ch22vo2qju3qk3bjn7e5j6tpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fernet.ezequielmatiaspelozo.sharebook",
+            "certificate_hash": "06ab324b056acb97d7de2ea7046e6307c7b56ec3"
+          }
+        },
+        {
+          "client_id": "179072356202-h1tfap73p80a5qlet8o0dpnqqi9roac2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJHTVlDMwxzakumwKtlOkaW5esj0n9TOo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179072356202-h1tfap73p80a5qlet8o0dpnqqi9roac2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

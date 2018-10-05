@@ -20,6 +20,7 @@ public class EditarPerfil extends Activity {
     private EditText preferencias;
     private Button editar;
     private DataBaseManager dbmn;
+    private User user;
 
 
     private TextView prueba;
@@ -55,8 +56,10 @@ public class EditarPerfil extends Activity {
                 String textEdad = edad.getText().toString();
                 String textUbicacion = ubicacion.getText().toString();
                 String textPreferencia = preferencias.getText().toString();
-
-               dbmn.inputData(textNombre,textApellido,textEdad,textUbicacion,textPreferencia);
+                //inicializo mi usuario
+                user = new User(textNombre,textApellido,textEdad, textUbicacion,textPreferencia);
+                //guardo mi usuario
+               dbmn.inputData(user);
 
             }
         });

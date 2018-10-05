@@ -5,9 +5,13 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DataBaseManager {
 
@@ -15,7 +19,9 @@ public class DataBaseManager {
     private BaseDeDatos b;
     private ContentValues nuevoRegistro;
     //para firebase
+    final FirebaseDatabase database;
     private DatabaseReference myDatabase;
+   // DatabaseReference ref;
     // para usar los resources como ejemplo String
     private Resources res = Resources.getSystem();
 
@@ -26,7 +32,9 @@ public class DataBaseManager {
         // inicializo ContentValue
         nuevoRegistro = new ContentValues();
         //inicio firebase
-        myDatabase = FirebaseDatabase.getInstance().getReference();
+        database = FirebaseDatabase.getInstance();
+        myDatabase = database.getReference();
+
     }
 
    //retorno los datos de mi DB
@@ -75,7 +83,7 @@ public class DataBaseManager {
         return palabra;
     }
     //ingreso los datos de mi perfil en mi DB
-    public void inputData(String nombre, String apellido, String edad, String ubicacion, String preferencias) {
+    public void inputData(User user) {
 
         // limpiamos los TextView
         db = b.getWritableDatabase();
@@ -92,18 +100,31 @@ public class DataBaseManager {
         }
 
         // insertamos los datos en el ContentValues
-        nuevoRegistro.put("nombre", nombre);
-        nuevoRegistro.put("apellido", apellido);
-        nuevoRegistro.put("edad", edad);
-        nuevoRegistro.put("ubicacion", ubicacion);
-        nuevoRegistro.put("preferencias", preferencias);
+        nuevoRegistro.put("nombre", user.nombre);
+        nuevoRegistro.put("apellido", user.apellido);
+        nuevoRegistro.put("edad",user.edad);
+        nuevoRegistro.put("ubicacion", user.ubicacion);
+        nuevoRegistro.put("preferencias", user.preferencias);
         // insertamos en la base
         db.insert("Ejemplo", null, nuevoRegistro);
         nuevoRegistro.clear();
 
-        //para firbase
-        User user = new User(nombre, apellido, edad, ubicacion, preferencias);
-        myDatabase.child("users").child(nombre).setValue(user);
+        //para firebase
+
+        DatabaseReference usersRef = myDatabase.child("users");
+        Log.d("asda", "asd");
+        Log.d("asda", "asd");
+        Log.d("asda", "asd");
+        Log.d("asda", "asd");
+        Log.d("asda", usersRef.toString());
+       // String value = "asdasd";
+        usersRef.child(usersRef.getKey()).setValue(user);
+
+
+
+
+
+
 
     }
 }

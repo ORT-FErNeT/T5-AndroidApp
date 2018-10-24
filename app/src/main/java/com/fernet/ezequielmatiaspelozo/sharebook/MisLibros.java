@@ -22,7 +22,7 @@ public class MisLibros extends Activity {
         final UserAdapter adapter = new UserAdapter(getApplicationContext(), libros);
 // Attach the adapter to a ListView
         misLibros.setAdapter(adapter);
-
+/*
         // Add item to adapter
         Libro miLibro1 = new Libro("prueba1",R.drawable.readyplayerone);
         Libro miLibro2 = new Libro("prueba2",R.drawable.tolkiencomunidad);
@@ -39,6 +39,6 @@ public class MisLibros extends Activity {
         adapter.add(miLibro5);
         adapter.add(miLibro6);
         adapter.add(miLibro7);
-
+*/
     }
 }

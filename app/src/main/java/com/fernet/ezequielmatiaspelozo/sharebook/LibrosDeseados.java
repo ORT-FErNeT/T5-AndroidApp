@@ -23,7 +23,7 @@ public class LibrosDeseados extends Activity {
         misLibrosDeseados.setAdapter(adapter);
 
         // Add item to adapter
-        Libro miLibro1 = new Libro("prueba1",R.drawable.readyplayerone);
+       /* Libro miLibro1 = new Libro("prueba1",R.drawable.readyplayerone);
         Libro miLibro2 = new Libro("prueba2",R.drawable.tolkiencomunidad);
         Libro miLibro3 = new Libro("prueba3",R.drawable.readyplayerone);
         Libro miLibro4 = new Libro("prueba4",R.drawable.tolkiencomunidad);
@@ -38,6 +38,6 @@ public class LibrosDeseados extends Activity {
         adapter.add(miLibro5);
         adapter.add(miLibro6);
         adapter.add(miLibro7);
-
+*/
     }
 }

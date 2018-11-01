@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -68,6 +70,7 @@ public class ApiConnect extends Activity {
         if (!titulo.isEmpty()){
             url += "intitle=" +titulo + "&";
         }
+        Log.e("TEST",url);
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -84,15 +87,19 @@ public class ApiConnect extends Activity {
                                 libroGoogleEntero = booksArray.getJSONObject(i);
                                 libroGoogleVolume = libroGoogleEntero.getJSONObject("volumeInfo");
                                 titulo = libroGoogleVolume.getString("title");
-                                imagenes = libroGoogleVolume.getJSONObject("imageLinks");
-                                imagenThumb = imagenes.getString("thumbnail");
                                 libro = new Libro();
-                                libro.setImagen(imagenThumb);
+                                libro.setId(libroGoogleEntero.getString("id"));
+                                try {
+                                    imagenes = libroGoogleVolume.getJSONObject("imageLinks");
+                                    imagenThumb = imagenes.getString("thumbnail");
+                                    libro.setImagen(imagenThumb);
+                                } catch (JSONException e) {
+                                    libro.setImagenDefault();
+                                }
                                 libro.setTitulo(titulo);
                                 setLibro(libro);
                             }
                             fillBooksSearch();
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -114,6 +121,7 @@ public class ApiConnect extends Activity {
 
     private void fillBooksSearch(){
         LinearLayout librosContainer = (LinearLayout) findViewById(R.id.LibrosContainerResult);
+
         TextView tv;
         ImageView img;
         for (int i = 0; i < this.libros.size(); i++){
@@ -121,6 +129,13 @@ public class ApiConnect extends Activity {
             tv.setText(libros.get(i).getTitulo());
             librosContainer.addView(tv);
             img = new ImageView(this);
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(), "This is my Toast message!",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
             Picasso.get().load(libros.get(i).getImagen()).into(img);
             librosContainer.addView(img);
         }

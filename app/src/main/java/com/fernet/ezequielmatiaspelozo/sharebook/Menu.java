@@ -1,17 +1,13 @@
 package com.fernet.ezequielmatiaspelozo.sharebook;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.toolbox.StringRequest;
 
 public class Menu extends Activity {
 
@@ -19,6 +15,7 @@ public class Menu extends Activity {
     private Button misLibros;
     private Button prestados;
     private Button librosDeseados;
+    private Button cambiarContrasenia;
     private ImageView perfil;
     private TextView textoPerfil;
     private DataBaseManager dbmn;
@@ -34,6 +31,7 @@ public class Menu extends Activity {
         prestados = (Button) findViewById(R.id.boton_prestados);
         textoPerfil = (TextView) findViewById(R.id.texto_perfil_menu);
         librosDeseados = (Button) findViewById(R.id.boton_libros_deseados);
+        cambiarContrasenia = (Button) findViewById(R.id.boton_cambiar_contrasenia);
 
         dbmn = new DataBaseManager(this);
 
@@ -76,6 +74,15 @@ public class Menu extends Activity {
             public void onClick(View v) {
                 // first parameter is the context, second is the class of the activity to launch
                 Intent  i = new Intent(getApplicationContext(), LibrosDeseados.class);
+                startActivity(i); // brings up the second activity
+            }
+        });
+        //voy a cambiar contrasenia
+        cambiarContrasenia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // first parameter is the context, second is the class of the activity to launch
+                Intent  i = new Intent(getApplicationContext(), CambiarContrasenia.class);
                 startActivity(i); // brings up the second activity
             }
         });

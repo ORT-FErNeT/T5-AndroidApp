@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +28,9 @@
         <activity android:name=".LibrosPrestados" />
         <activity android:name=".LibrosDeseados" />
         <activity android:name=".EditarPerfil" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".CambiarContrasenia"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".CambiarContrasenia" />
+        <activity android:name=".LibroSeleccionadoBusqueda"/>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.fernet.ezequielmatiaspelozo.sharebook;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Debug;
@@ -102,7 +103,7 @@ public class ApiConnect extends Activity {
                             fillBooksSearch();
 
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.e("ERROR",e.getMessage());
                         }
                     }
                 },
@@ -121,22 +122,44 @@ public class ApiConnect extends Activity {
 
     private void fillBooksSearch(){
         LinearLayout librosContainer = (LinearLayout) findViewById(R.id.LibrosContainerResult);
-
+        String idLibro;
+        String tituloLibro;
+        String urlLibro;
         TextView tv;
         ImageView img;
+
+
+
+
         for (int i = 0; i < this.libros.size(); i++){
+
+
+            urlLibro = libros.get(i).getImagen();
+            idLibro = libros.get(i).getId();
+            tituloLibro = libros.get(i).getTitulo();
+
+            final Bundle b = new Bundle();
+
+            b.putString("urlLibro",urlLibro);
+            b.putString("idLibro",idLibro);
+            b.putString("tituloLibro",tituloLibro);
+
+
+
             tv = new TextView(this);
-            tv.setText(libros.get(i).getTitulo());
+            tv.setText(tituloLibro);
             librosContainer.addView(tv);
             img = new ImageView(this);
+
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "This is my Toast message!",
-                            Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(ApiConnect.this,LibroSeleccionadoBusqueda.class);
+                    i.putExtras(b);
+                    startActivity(i);
                 }
             });
-            Picasso.get().load(libros.get(i).getImagen()).into(img);
+            Picasso.get().load(urlLibro).into(img);
             librosContainer.addView(img);
         }
     }

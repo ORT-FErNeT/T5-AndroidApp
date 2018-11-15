@@ -110,7 +110,7 @@ public class ApiConnect extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
+                       Log.e("ERROR", error.getMessage());
                     }
                 });
         /* Add your Requests to the RequestQueue to execute */

@@ -17,9 +17,11 @@ public class Login extends Activity {
     private EditText clave;
     private Button ingreso;
     private TextView intentos;
-    private String usserName = "admin";
-    private String password = "1234";
+    private String usserName = "";
+    private String password = "";
     private int counter = 5;
+    public static final String defaultPasword = "1234";
+    public static final String defaultUsserName =  "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +43,24 @@ public class Login extends Activity {
         SharedPreferences mSettings = context.getSharedPreferences("Settings", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = mSettings.edit();
+
+
         //-----------------Key-------Value--------
-        //editor.putString( "username",usserName);
-        //editor.putString( "pasword",password);
+       // editor.putString( "username",defaultUsserName);
+        //editor.putString( "pasword",defaultPasword);
         //editor.apply();
 
-        //recupero data
+        //recupero data de Shared preference
         usserName = mSettings.getString("username", "missing");
         password = mSettings.getString("pasword", "missing");
 
-
-
-        /*Context context =this.getActivity();
-        SharedPreferences sharedPref = context.getSharedPreferences(
-                getString(R.string.usuario), Context.MODE_PRIVATE);*/
-
-
+        //si no hay password y ussername los seteo por default
+        if (usserName.equals("missing")) {
+            setUsserName(defaultUsserName);
+        }
+        if (password.equals("missing")) {
+            setPassword(defaultPasword);
+        }
 
         ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +70,15 @@ public class Login extends Activity {
         });
 
     }
+
+    private void setUsserName(String usserName ){
+        this.usserName = usserName;
+    }
+
+    private void setPassword(String password){
+        this.password = password;
+    }
+
 
     private void validate(String userNAme, String userPassword){
 

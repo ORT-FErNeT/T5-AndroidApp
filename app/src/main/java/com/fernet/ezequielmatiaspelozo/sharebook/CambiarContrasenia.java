@@ -29,22 +29,24 @@ public class CambiarContrasenia extends Activity {
         ingreso = (Button) findViewById(R.id.cambiar_contrasenia_button);
         correcto = (TextView) findViewById(R.id.cambiar_contrasenia_correct);
 
+
+
         ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 name = nombre.getText().toString();
                 password = clave.getText().toString();
+                //Uso SharedPreferences para guardar el nombre y clave
+
+                // Activity Context
+                Context context = CambiarContrasenia.this; // or getActivity(); in case of Fragments
+
+                SharedPreferences mSettings = context.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = mSettings.edit();
 
                 if(name.equals("")||password.equals("")) {
 
-                    //Uso SharedPreferences para guardar el nombre y clave
-
-                    // Activity Context
-                    Context context = CambiarContrasenia.this; // or getActivity(); in case of Fragments
-
-                    SharedPreferences mSettings = context.getSharedPreferences("Settings", Context.MODE_PRIVATE);
-
-                    SharedPreferences.Editor editor = mSettings.edit();
                     //-----------------Key-------Value--------
                     editor.putString( "username","admin");
                     editor.putString( "pasword","1234");
@@ -53,14 +55,6 @@ public class CambiarContrasenia extends Activity {
 
                 } else {
 
-                    //Uso SharedPreferences para guardar el nombre y clave
-
-                    // Activity Context
-                    Context context = CambiarContrasenia.this; // or getActivity(); in case of Fragments
-
-                    SharedPreferences mSettings = context.getSharedPreferences("Settings", Context.MODE_PRIVATE);
-
-                    SharedPreferences.Editor editor = mSettings.edit();
                     //-----------------Key-------Value--------
                     editor.putString( "username",name);
                     editor.putString( "pasword",password);

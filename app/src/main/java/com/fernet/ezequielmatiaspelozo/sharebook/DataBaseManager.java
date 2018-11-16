@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +27,7 @@ public class DataBaseManager {
     final FirebaseDatabase database;
     private DatabaseReference myDatabase;
     private DatabaseReference usersRef;
+    private DatabaseReference bookUserRef;
     // para usar los resources como ejemplo String
     private Resources res = Resources.getSystem();
 
@@ -39,7 +41,7 @@ public class DataBaseManager {
         database = FirebaseDatabase.getInstance();
         myDatabase = database.getReference();
         usersRef = myDatabase.child("users");
-
+        bookUserRef = myDatabase.child("users_libros");
     }
 
     //retorno los datos de mi DB
@@ -58,8 +60,8 @@ public class DataBaseManager {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
 
-                System.out.println("User " +  user.nombre);
-                System.out.println("User " +  user.apellido);
+                System.out.println("User " +  user.getNombre());
+                System.out.println("User " +  user.getApellido());
                 //ahora deberia guardar lo que se cambio en mi base local para luego levantarlo de ahi
                 modify(user);
                 }
@@ -140,13 +142,30 @@ public class DataBaseManager {
         }
 
         // insertamos los datos en el ContentValues
-        nuevoRegistro.put("nombre", user.nombre);
-        nuevoRegistro.put("apellido", user.apellido);
-        nuevoRegistro.put("edad",user.edad);
-        nuevoRegistro.put("ubicacion", user.ubicacion);
-        nuevoRegistro.put("preferencias", user.preferencias);
+        nuevoRegistro.put("nombre", user.getNombre());
+        nuevoRegistro.put("apellido", user.getApellido());
+        nuevoRegistro.put("edad",user.getEdad());
+        nuevoRegistro.put("ubicacion", user.getUbicacion());
+        nuevoRegistro.put("preferencias", user.getPreferencias());
         // insertamos en la base
         db.insert("Ejemplo", null, nuevoRegistro);
         nuevoRegistro.clear();
+    }
+    //
+    public void saveWishedBook(User user, Libro libro,String estado) {
+       UsuarioLibro miLibro = new UsuarioLibro(libro.getId(),"admin",estado);
+
+        //UsuarioLibro micosa = new UsuarioLibro("1","admin","PRESTADO");
+        Log.d("test",miLibro.toString());
+        Log.d("test", bookUserRef.toString());
+        Log.d("test",bookUserRef.getKey());
+        String id = bookUserRef.getKey();
+        Log.d("test","firebase id " + id  );
+        try {
+            bookUserRef.setValue(miLibro);
+        } catch (Exception e) {
+            Log.e("test", e.getMessage());
+        }
+
     }
 }

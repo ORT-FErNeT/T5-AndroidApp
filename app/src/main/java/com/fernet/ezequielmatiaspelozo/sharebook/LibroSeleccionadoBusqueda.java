@@ -50,6 +50,9 @@ public class LibroSeleccionadoBusqueda extends Activity {
         btnSelecAgregarADeseados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DataBaseManager dataBaseManager = new DataBaseManager(getApplicationContext());
+                //dataBaseManager.saveWishedBook();
+
                 Toast.makeText(getApplicationContext(), "El libro ha sido agregado a la lista de deseados!",
                         Toast.LENGTH_LONG).show();
             }

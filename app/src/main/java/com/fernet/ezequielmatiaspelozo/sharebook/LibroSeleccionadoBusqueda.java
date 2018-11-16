@@ -19,7 +19,7 @@ public class LibroSeleccionadoBusqueda extends Activity {
 
         Bundle b = this.getIntent().getExtras();
 
-        String idLibro;
+        final String idLibro;
         String tituloLibro;
         String urlLibro;
 
@@ -43,7 +43,7 @@ public class LibroSeleccionadoBusqueda extends Activity {
 
 
         }   catch ( Exception e) {
-            Log.e("TAG",e.getMessage());
+            Log.e("ERROR",e.getMessage());
         }
 
 

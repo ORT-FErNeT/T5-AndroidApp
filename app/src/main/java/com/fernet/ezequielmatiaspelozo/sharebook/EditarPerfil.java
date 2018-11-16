@@ -3,6 +3,7 @@ package com.fernet.ezequielmatiaspelozo.sharebook;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -49,6 +50,15 @@ public class EditarPerfil extends Activity {
             @Override
             public void onClick(View v) {
 
+                // Activity Context
+                Context context =EditarPerfil.this; // or getActivity(); in case of Fragments
+
+                SharedPreferences mSettings = context.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = mSettings.edit();
+                //recupero data de Shared preference
+                String  usserName = mSettings.getString("username", "missing");
+                String password = mSettings.getString("pasword", "missing");
 
                 //agrego
                 String textNombre = nombre.getText().toString();
@@ -57,7 +67,7 @@ public class EditarPerfil extends Activity {
                 String textUbicacion = ubicacion.getText().toString();
                 String textPreferencia = preferencias.getText().toString();
                 //inicializo mi usuario
-                user = new User(textNombre,textApellido,textEdad, textUbicacion,textPreferencia);
+                user = new User(textNombre,textApellido,textEdad, textUbicacion,textPreferencia, usserName, password);
                 //guardo mi usuario
                dbmn.inputData(user);
 

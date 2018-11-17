@@ -44,7 +44,6 @@ public class Login extends Activity {
 
         SharedPreferences.Editor editor = mSettings.edit();
 
-
         editor.putString("username",defaultUsserName);
         editor.putString("pasword",defaultPasword);
         editor.apply();
@@ -60,8 +59,6 @@ public class Login extends Activity {
         if (password.equals("missing")) {
             setPassword(defaultPasword);
         }
-
-
 
         ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +76,6 @@ public class Login extends Activity {
     private void setPassword(String password){
         this.password = password;
     }
-
 
     private void validate(String userNAme, String userPassword){
 

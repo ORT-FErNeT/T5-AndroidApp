@@ -119,14 +119,13 @@ public class DataBaseManager {
     public void inputData(User user) {
 
          modify(user);
-
         //para firebase
        //guardo en FireBase
         Log.d("test", usersRef.toString());
         usersRef.child(usersRef.getKey()).setValue(user);
-        }
-        
-        //agrego un metodo para modificar
+    }
+
+    //agrego un metodo para modificar
 
     public void modify(User user) {
 
@@ -154,17 +153,15 @@ public class DataBaseManager {
         db.insert("Ejemplo", null, nuevoRegistro);
         nuevoRegistro.clear();
     }
-    //
+
     public void saveWishedBook(String username, String libro,String estado) {
        UsuarioLibro miLibro = new UsuarioLibro(libro,username,estado);
-
         try {
             if (estado == "PRESTADO") {
                 DatabaseReference ref = bookUserPrestadosRef.push();
                 ref.setValue(miLibro);
             }
             if (estado == "DESEADO") {
-                //bookUserDeseadosRef.setValue(miLibro);
                 DatabaseReference ref = bookUserDeseadosRef.push();
                 ref.setValue(miLibro);
             }

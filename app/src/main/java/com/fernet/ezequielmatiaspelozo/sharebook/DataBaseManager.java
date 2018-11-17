@@ -153,7 +153,7 @@ public class DataBaseManager {
     }
     //
     public void saveWishedBook(User user, Libro libro,String estado) {
-       UsuarioLibro miLibro = new UsuarioLibro(libro.getId(),"admin",estado);
+       UsuarioLibro miLibro = new UsuarioLibro(libro.getId(),user.getUsserName(),estado);
 
         //UsuarioLibro micosa = new UsuarioLibro("1","admin","PRESTADO");
         Log.d("test",miLibro.toString());

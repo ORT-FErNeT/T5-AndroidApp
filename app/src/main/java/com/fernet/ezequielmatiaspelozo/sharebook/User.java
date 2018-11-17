@@ -7,6 +7,23 @@ public class User {
     private String edad;
     private String ubicacion;
     private String preferencias;
+
+    public String getUsserName() {
+        return usserName;
+    }
+
+    public void setUsserName(String usserName) {
+        this.usserName = usserName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private String usserName;
     private String password;
 

@@ -27,7 +27,8 @@ public class DataBaseManager {
     final FirebaseDatabase database;
     private DatabaseReference myDatabase;
     private DatabaseReference usersRef;
-    private DatabaseReference bookUserRef;
+    private DatabaseReference bookUserDeseadosRef;
+    private DatabaseReference bookUserPrestadosRef;
     // para usar los resources como ejemplo String
     private Resources res = Resources.getSystem();
 
@@ -41,7 +42,9 @@ public class DataBaseManager {
         database = FirebaseDatabase.getInstance();
         myDatabase = database.getReference();
         usersRef = myDatabase.child("users");
-        bookUserRef = myDatabase.child("users_libros");
+        bookUserDeseadosRef = myDatabase.child("users_libros_deseados");
+        bookUserPrestadosRef = myDatabase.child("users_libros_prestados");
+
     }
 
     //retorno los datos de mi DB
@@ -152,17 +155,19 @@ public class DataBaseManager {
         nuevoRegistro.clear();
     }
     //
-    public void saveWishedBook(User user, Libro libro,String estado) {
-       UsuarioLibro miLibro = new UsuarioLibro(libro.getId(),user.getUsserName(),estado);
+    public void saveWishedBook(String username, String libro,String estado) {
+       UsuarioLibro miLibro = new UsuarioLibro(libro,username,estado);
 
-        //UsuarioLibro micosa = new UsuarioLibro("1","admin","PRESTADO");
-        Log.d("test",miLibro.toString());
-        Log.d("test", bookUserRef.toString());
-        Log.d("test",bookUserRef.getKey());
-        String id = bookUserRef.getKey();
-        Log.d("test","firebase id " + id  );
         try {
-            bookUserRef.setValue(miLibro);
+            if (estado == "PRESTADO") {
+                DatabaseReference ref = bookUserPrestadosRef.push();
+                ref.setValue(miLibro);
+            }
+            if (estado == "DESEADO") {
+                //bookUserDeseadosRef.setValue(miLibro);
+                DatabaseReference ref = bookUserDeseadosRef.push();
+                ref.setValue(miLibro);
+            }
         } catch (Exception e) {
             Log.e("test", e.getMessage());
         }

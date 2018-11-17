@@ -1,6 +1,11 @@
 package com.fernet.ezequielmatiaspelozo.sharebook;
 
 public class UsuarioLibro {
+
+    public UsuarioLibro() {
+
+    }
+
     public UsuarioLibro(String idLibro, String userName, String estado) {
         this.idLibro = idLibro;
         this.userName = userName;

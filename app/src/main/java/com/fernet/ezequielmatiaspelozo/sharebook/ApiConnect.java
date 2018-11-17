@@ -128,11 +128,7 @@ public class ApiConnect extends Activity {
         TextView tv;
         ImageView img;
 
-
-
-
         for (int i = 0; i < this.libros.size(); i++){
-
 
             urlLibro = libros.get(i).getImagen();
             idLibro = libros.get(i).getId();
@@ -143,8 +139,6 @@ public class ApiConnect extends Activity {
             b.putString("urlLibro",urlLibro);
             b.putString("idLibro",idLibro);
             b.putString("tituloLibro",tituloLibro);
-
-
 
             tv = new TextView(this);
             tv.setText(tituloLibro);

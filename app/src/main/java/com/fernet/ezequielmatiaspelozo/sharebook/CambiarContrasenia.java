@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CambiarContrasenia extends Activity {
 
@@ -59,6 +60,8 @@ public class CambiarContrasenia extends Activity {
                     editor.putString( "username",name);
                     editor.putString( "pasword",password);
                     editor.apply();
+                    Toast.makeText(getApplicationContext(), "La clave fue cambiada con exito!",
+                            Toast.LENGTH_LONG).show();
 
                 }
 

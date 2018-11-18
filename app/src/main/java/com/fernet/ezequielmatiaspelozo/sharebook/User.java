@@ -9,9 +9,8 @@ public class User {
     private String usserName;
     private String password;
 
-    public User(){
-
-    }
+    //es un requerimientode Firebase
+    public User () {}
 
     public User(String nombre, String apellido, String edad, String ubicacion, String preferencias, String usserName, String password) {
         this.nombre = nombre;

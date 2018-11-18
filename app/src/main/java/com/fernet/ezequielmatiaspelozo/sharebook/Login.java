@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Login extends Activity {
 
@@ -81,6 +82,8 @@ public class Login extends Activity {
 
         if(userNAme.equals(this.usserName) && userPassword.equals(this.password) ) {
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            Toast.makeText(getApplicationContext(), "Clave correcta!",
+                    Toast.LENGTH_LONG).show();
             startActivity(i); // brings up the second activity
         }else {
             counter--;
@@ -91,6 +94,7 @@ public class Login extends Activity {
         }
 
     }
-
-
 }
+
+
+

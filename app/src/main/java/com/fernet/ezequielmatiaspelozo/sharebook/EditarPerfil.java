@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditarPerfil extends Activity {
 
@@ -70,6 +71,8 @@ public class EditarPerfil extends Activity {
                 user = new User(textNombre,textApellido,textEdad, textUbicacion,textPreferencia, usserName, password);
                 //guardo mi usuario
                dbmn.inputData(user);
+                Toast.makeText(getApplicationContext(), "Los datos fueron guardado con exito!",
+                        Toast.LENGTH_LONG).show();
 
             }
         });

@@ -2,13 +2,16 @@ package com.fernet.ezequielmatiaspelozo.sharebook;
 
 public class User {
 
-    private String nombre;
-    private String apellido;
-    private String edad;
-    private String ubicacion;
-    private String preferencias;
-    private String usserName;
-    private String password;
+    public String nombre;
+    public String apellido;
+    public String edad;
+    public String ubicacion;
+    public String preferencias;
+    public String usserName;
+    public String password;
+
+    //es un requerimientode Firebase
+    public User () {}
 
     public User(String nombre, String apellido, String edad, String ubicacion, String preferencias, String usserName, String password) {
         this.nombre = nombre;

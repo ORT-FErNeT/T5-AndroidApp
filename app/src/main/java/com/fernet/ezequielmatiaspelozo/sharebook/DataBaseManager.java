@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +27,8 @@ public class DataBaseManager {
     final FirebaseDatabase database;
     private DatabaseReference myDatabase;
     private DatabaseReference usersRef;
+    private DatabaseReference bookUserDeseadosRef;
+    private DatabaseReference bookUserPrestadosRef;
     // para usar los resources como ejemplo String
     private Resources res = Resources.getSystem();
 
@@ -39,6 +42,8 @@ public class DataBaseManager {
         database = FirebaseDatabase.getInstance();
         myDatabase = database.getReference();
         usersRef = myDatabase.child("users");
+        bookUserDeseadosRef = myDatabase.child("users_libros_deseados");
+        bookUserPrestadosRef = myDatabase.child("users_libros_prestados");
 
     }
 
@@ -58,8 +63,8 @@ public class DataBaseManager {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
 
-                System.out.println("User " +  user.nombre);
-                System.out.println("User " +  user.apellido);
+                System.out.println("User " +  user.getNombre());
+                System.out.println("User " +  user.getApellido());
                 //ahora deberia guardar lo que se cambio en mi base local para luego levantarlo de ahi
                 modify(user);
                 }
@@ -114,14 +119,13 @@ public class DataBaseManager {
     public void inputData(User user) {
 
          modify(user);
-
         //para firebase
        //guardo en FireBase
         Log.d("test", usersRef.toString());
         usersRef.child(usersRef.getKey()).setValue(user);
-        }
-        
-        //agrego un metodo para modificar
+    }
+
+    //agrego un metodo para modificar
 
     public void modify(User user) {
 
@@ -140,13 +144,30 @@ public class DataBaseManager {
         }
 
         // insertamos los datos en el ContentValues
-        nuevoRegistro.put("nombre", user.nombre);
-        nuevoRegistro.put("apellido", user.apellido);
-        nuevoRegistro.put("edad",user.edad);
-        nuevoRegistro.put("ubicacion", user.ubicacion);
-        nuevoRegistro.put("preferencias", user.preferencias);
+        nuevoRegistro.put("nombre", user.getNombre());
+        nuevoRegistro.put("apellido", user.getApellido());
+        nuevoRegistro.put("edad",user.getEdad());
+        nuevoRegistro.put("ubicacion", user.getUbicacion());
+        nuevoRegistro.put("preferencias", user.getPreferencias());
         // insertamos en la base
         db.insert("Ejemplo", null, nuevoRegistro);
         nuevoRegistro.clear();
+    }
+
+    public void saveWishedBook(String username, String libro,String estado) {
+       UsuarioLibro miLibro = new UsuarioLibro(libro,username,estado);
+        try {
+            if (estado == "PRESTADO") {
+                DatabaseReference ref = bookUserPrestadosRef.push();
+                ref.setValue(miLibro);
+            }
+            if (estado == "DESEADO") {
+                DatabaseReference ref = bookUserDeseadosRef.push();
+                ref.setValue(miLibro);
+            }
+        } catch (Exception e) {
+            Log.e("test", e.getMessage());
+        }
+
     }
 }

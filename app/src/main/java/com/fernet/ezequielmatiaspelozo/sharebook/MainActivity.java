@@ -8,16 +8,13 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    private Button inicio;
-    private Button buscar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inicio = (Button) findViewById(R.id.boton_menu);
-        buscar = (Button) findViewById(R.id.boton_buscar);
+        Button inicio = (Button) findViewById(R.id.boton_menu);
+        Button buscar = (Button) findViewById(R.id.boton_buscar);
 
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -45,11 +45,9 @@ public class Login extends Activity {
 
         SharedPreferences.Editor editor = mSettings.edit();
 
-
-        //-----------------Key-------Value--------
-       // editor.putString( "username",defaultUsserName);
-        //editor.putString( "pasword",defaultPasword);
-        //editor.apply();
+        editor.putString("username",defaultUsserName);
+        editor.putString("pasword",defaultPasword);
+        editor.apply();
 
         //recupero data de Shared preference
         usserName = mSettings.getString("username", "missing");
@@ -80,7 +78,6 @@ public class Login extends Activity {
         this.password = password;
     }
 
-
     private void validate(String userNAme, String userPassword){
 
         if(userNAme.equals(this.usserName) && userPassword.equals(this.password) ) {
@@ -97,6 +94,7 @@ public class Login extends Activity {
         }
 
     }
-
-
 }
+
+
+

@@ -1,14 +1,13 @@
 package com.fernet.ezequielmatiaspelozo.sharebook;
 
 public class User {
-
-    public String nombre;
-    public String apellido;
-    public String edad;
-    public String ubicacion;
-    public String preferencias;
-    public String usserName;
-    public String password;
+    private String nombre;
+    private String apellido;
+    private String edad;
+    private String ubicacion;
+    private String preferencias;
+    private String usserName;
+    private String password;
 
     //es un requerimientode Firebase
     public User () {}
@@ -21,5 +20,61 @@ public class User {
         this.preferencias = preferencias;
         this.usserName = usserName;
         this.password = password;
+    }
+
+    public String getUsserName() {
+        return usserName;
+    }
+
+    public void setUsserName(String usserName) {
+        this.usserName = usserName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(String preferencias) {
+        this.preferencias = preferencias;
     }
 }

@@ -43,14 +43,6 @@
             android:layout_marginRight="25dp"
             android:text="@string/busqueda" />
 
-        <TextView
-            android:id="@+id/ingreso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:text="@string/busqueda" />
-
         <ProgressBar
             android:id="@+id/BarraDeProgresoLibros"
             style="?android:attr/progressBarStyleHorizontal"

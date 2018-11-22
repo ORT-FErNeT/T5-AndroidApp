@@ -17,6 +17,7 @@ public class Perfil extends Activity {
     private Button editarPerfilButton;
     private TextView datosDePerfil;
     private DataBaseManager dbmn;
+    private ImageView imagen1;
 
 
     @Override
@@ -27,8 +28,10 @@ public class Perfil extends Activity {
         editarPerfilButton = (Button) findViewById(R.id.boton_editar_perfil_activity);
 
         perfil = (ImageView) findViewById(R.id.imagen_perfil);
+        imagen1 = (ImageView) findViewById(R.id.imagen_1);
         datosDePerfil = (TextView) findViewById(R.id.datos_perfil);
         perfil.setImageResource(R.drawable.avatar);
+        imagen1.setImageResource(R.drawable.trabajando1);
         dbmn = new DataBaseManager(this);
 
 
@@ -36,6 +39,7 @@ public class Perfil extends Activity {
         String palabra = dbmn.returnData();
 
         datosDePerfil.setText(palabra);
+
 
         editarPerfilButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,48 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".Perfil">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="46dp">
-
-        <ImageView
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/imagen_perfil"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="25dp"
-            android:layout_weight="2"
-            android:scaleType="center"
-            android:src="@drawable/imagen" />
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/datos_perfil"
-            android:layout_marginEnd="25dp"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center"
-            android:text="mis_datos" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/boton_editar_perfil_activity"
-        android:layout_marginStart="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/editar_perfil"/>
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="116dp"
+            tools:layout_editor_absoluteY="46dp">
+
+            <ImageView
+                android:id="@+id/imagen_perfil"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="2"
+                android:scaleType="center"
+                android:src="@drawable/imagen" />
+
+            <TextView
+                android:id="@+id/datos_perfil"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center"
+                android:text="mis_datos" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/boton_editar_perfil_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="@string/editar_perfil" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -85,13 +87,20 @@
                 android:text="anuncio 03" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/imagen_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="2"
+            android:scaleType="center"
+            android:src="@drawable/imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="427dp" />
 
-</LinearLayout>
-
-
-
-
-
+    </LinearLayout>
 
 
 

@@ -8,6 +8,7 @@ public class Libro {
     private String titulo;
     private String imagen;
     private String id;
+    private int imagenDePrueba;
 
     public String getId() { return id; }
     public String getTitulo() {
@@ -16,13 +17,19 @@ public class Libro {
     public String getImagen() {
         return imagen;
     }
+    public int getImagenDePrueba() {
+        return imagenDePrueba;
+    }
+
 
     public void setTitulo(String mTitulo) {
         this.titulo = mTitulo;
     }
-
     public void setImagen(String mImagen) {
         this.imagen = mImagen;
+    }
+    public void setImagenDePrueba(int imagen) {
+        this.imagenDePrueba = imagen;
     }
     public void setId(String id) {
         this.id = id;

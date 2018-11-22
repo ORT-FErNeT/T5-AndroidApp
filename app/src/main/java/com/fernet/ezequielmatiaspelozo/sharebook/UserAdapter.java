@@ -37,8 +37,8 @@ public class UserAdapter extends ArrayAdapter<Libro> {
 
         // Populate the data into the template view using the data object
         // aca ojo tuve problemas al pasar el dato que correspondia
-       // nombre.setText(libro.nombre);
-        //imagen.setImageResource(libro.imagen);
+        nombre.setText(libro.getTitulo());
+        imagen.setImageResource(libro.getImagenDePrueba());
 
 
 

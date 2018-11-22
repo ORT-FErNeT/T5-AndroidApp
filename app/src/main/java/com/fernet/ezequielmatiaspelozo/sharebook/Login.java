@@ -45,9 +45,9 @@ public class Login extends Activity {
 
         SharedPreferences.Editor editor = mSettings.edit();
 
-        editor.putString("username",defaultUsserName);
-        editor.putString("pasword",defaultPasword);
-        editor.apply();
+        //editor.putString("username",defaultUsserName);
+        //editor.putString("pasword",defaultPasword);
+        //editor.apply();
 
         //recupero data de Shared preference
         usserName = mSettings.getString("username", "missing");

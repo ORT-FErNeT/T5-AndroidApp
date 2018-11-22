@@ -24,6 +24,31 @@ public class LibrosPrestados extends Activity {
         final UserAdapter adapter = new UserAdapter(getApplicationContext(), libros);
 // Attach the adapter to a ListView
         misLibrosPrestados.setAdapter(adapter);
+        Libro libro1 = new Libro();
+        Libro libro2 = new Libro();
+        Libro libro3 = new Libro();
+
+        libro1.setTitulo("en construccion");
+        libro1.setImagenDePrueba(R.drawable.contruccion1);
+        libro2.setTitulo("Tolkien");
+        libro2.setImagenDePrueba(R.drawable.tolkiencomunidad);
+        libro3.setTitulo("en construccion");
+        libro3.setImagenDePrueba(R.drawable.construccion3);
+        libros.add(libro1);
+        libros.add(libro2);
+        libros.add(libro3);
+        libros.add(libro1);
+        libros.add(libro2);
+        libros.add(libro3);
+        libros.add(libro1);
+        libros.add(libro2);
+        libros.add(libro3);
+        libros.add(libro1);
+        libros.add(libro2);
+        libros.add(libro3);
+        libros.add(libro1);
+        libros.add(libro2);
+        libros.add(libro3);
 
     }
 }

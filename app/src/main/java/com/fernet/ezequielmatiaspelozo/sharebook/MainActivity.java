@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
@@ -15,6 +16,9 @@ public class MainActivity extends Activity {
 
         Button inicio = (Button) findViewById(R.id.boton_menu);
         Button buscar = (Button) findViewById(R.id.boton_buscar);
+        ImageView imagen = (ImageView) findViewById(R.id.imagen_2);
+
+        imagen.setImageResource(R.drawable.trabajando2);
 
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -160,10 +160,12 @@ public class DataBaseManager {
             if (estado == "PRESTADO") {
                 DatabaseReference ref = bookUserPrestadosRef.push();
                 ref.setValue(miLibro);
+                Log.d("test", bookUserPrestadosRef.toString());
             }
             if (estado == "DESEADO") {
                 DatabaseReference ref = bookUserDeseadosRef.push();
                 ref.setValue(miLibro);
+                Log.d("test", bookUserDeseadosRef.toString());
             }
         } catch (Exception e) {
             Log.e("test", e.getMessage());

@@ -2,6 +2,7 @@ package com.fernet.ezequielmatiaspelozo.sharebook;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -31,7 +32,7 @@ public class DataBaseManager {
     private DatabaseReference bookUserPrestadosRef;
     // para usar los resources como ejemplo String
     private Resources res = Resources.getSystem();
-
+    private Context context;
     public DataBaseManager(Context context) {
 
         // creamos la base de datos
@@ -44,11 +45,16 @@ public class DataBaseManager {
         usersRef = myDatabase.child("users");
         bookUserDeseadosRef = myDatabase.child("users_libros_deseados");
         bookUserPrestadosRef = myDatabase.child("users_libros_prestados");
-
+        this.context = context;
     }
 
     //retorno los datos de mi DB
     public String returnData(){
+
+
+        SharedPreferences mSettings = context.getSharedPreferences("Perfil", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mSettings.edit();
+
 
         // la abrimos en modo escritura
         db = b.getReadableDatabase();
@@ -85,22 +91,29 @@ public class DataBaseManager {
                     //estoy probando que se graban los ingresos en la base
                     palabra += "Nombre: ";
                     palabra += cursor.getString(cursor.getColumnIndex("nombre"));
+                    editor.putString("nombre",cursor.getString(cursor.getColumnIndex("nombre")));
                     palabra += "\n";
                    // palabra += res.getString(R.string.apellido);
                     palabra += "Apellido: ";
                     palabra += cursor.getString(cursor.getColumnIndex("apellido"));
+                    editor.putString("apellido",cursor.getString(cursor.getColumnIndex("apellido")));
                     palabra += "\n";
                    // palabra += res.getString(R.string.edad);
                     palabra += "Edad: ";
                     palabra += cursor.getString(cursor.getColumnIndex("edad"));
+                    editor.putString("edad",cursor.getString(cursor.getColumnIndex("edad")));
                     palabra += "\n";
                    // palabra += res.getString(R.string.ubicacion);
                     palabra += "Ubicacion: ";
                     palabra += cursor.getString(cursor.getColumnIndex("ubicacion"));
+                    editor.putString("ubicacion",cursor.getString(cursor.getColumnIndex("ubicacion")));
                     palabra += "\n";
                     //palabra += res.getString(R.string.preferencias);
                     palabra += "Preferencias: ";
                     palabra += cursor.getString(cursor.getColumnIndex("preferencias"));
+                    editor.putString("preferencias",cursor.getString(cursor.getColumnIndex("preferencias")));
+
+                    editor.apply();
 
                 } while(cursor.moveToNext());
             }
